@@ -1,16 +1,12 @@
-window.onload = function() {
+function getWord(evt) {
+    evt.preventDefault();
+    let iWord = document.getElementById('word');
+    const log = document.getElementById('result');
+    log.textContent = `word submitted: ${iWord.value}`;
     
-    const obj = document.getElementById('square');
-    obj.addEventListener('submit', handleSubmitForm);
-    // window.addEventListener("keydown", event => {
-    //   let kp = 'E';
-    //   switch (event.key) {
-    //     case 'd':
-    //     case 's':
-    //     case 'a':
-    //     case 'w':
-    //       kp = event.key;
-    //       handleKey(obj, kp);
-    //   }
-    // }, false);
+}
+
+window.onload = function() {
+    const form = document.getElementById('dict');
+    form.addEventListener('submit', getWord);
 }
